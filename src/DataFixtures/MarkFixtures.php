@@ -27,9 +27,10 @@ class MarkFixtures extends Fixture implements DependentFixtureInterface
     {
     	$faker = Factory::create();
 		$lessons = $this->lessonRepository->findLast(5);
-		$students = $this->studentRepository->findLast(100);
 
 		foreach ($lessons as $lesson){
+			$grade = $lesson->getGrade();
+			$students = $this->studentRepository->findBy(['grade' => $grade]);
 			foreach ($students as $student){
 				$mark = new Mark();
 				$mark->createMark(
