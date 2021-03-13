@@ -13,7 +13,7 @@ class ProfessorFixtures extends Fixture
     {
     	$faker = Factory::create();
 
-		for ($i = 0; $i < 4; $i++) {
+		for ($i = 0; $i < 5; $i++) {
 			$professor = new Professor();
 			$professor->createProfessor(
 				$faker->lastName,

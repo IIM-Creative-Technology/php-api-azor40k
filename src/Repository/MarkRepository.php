@@ -18,33 +18,19 @@ class MarkRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Mark::class);
     }
-
-    // /**
-    //  * @return Mark[] Returns an array of Mark objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('m')
-            ->andWhere('m.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('m.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Mark
-    {
-        return $this->createQueryBuilder('m')
-            ->andWhere('m.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
+	
+	/**
+	 * @param int $student
+	 * @return int|mixed|string
+	 */
+	public function findMarksByStudent(int $student)
+	{
+		return $this->createQueryBuilder('m')
+		            ->innerJoin('m.student', 's')
+		            ->andWhere('s.id = :student')
+		            ->setParameter('student', $student)
+		            ->getQuery()
+		            ->getResult()
+			;
+	}
 }

@@ -1,0 +1,20 @@
+App\Entity\Student:
+  normalizationContext:
+    groups: ~
+  denormalizationContext:
+    groups: ~
+  collectionOperations:
+    get: ~
+    post: ~
+  itemOperations:
+    get: ~
+    put: ~
+    delete: ~
+    patch: ~
+    student_marks:
+      method: 'GET'
+      path: "/students/{id}/marks"
+      controller: App\Api\StudentMarks
+      openapi_context:
+        summary: "Retrieves Marks from a Student resource."
+        description: "Retrieves Marks from a Student resource."

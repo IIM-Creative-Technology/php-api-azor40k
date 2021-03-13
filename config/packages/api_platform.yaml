@@ -1,6 +1,11 @@
 api_platform:
+    title: 'AC PULV API'
+    description: 'Léonard de Vinci Institute user management API by Axel Carandang'
+    version: '1.0.0'
     mapping:
-        paths: ['%kernel.project_dir%/src/Entity']
+        paths:
+            - '%kernel.project_dir%/src/Entity'
+            - '%kernel.project_dir%/config/api_resources'
     patch_formats:
         json: ['application/merge-patch+json']
     swagger:

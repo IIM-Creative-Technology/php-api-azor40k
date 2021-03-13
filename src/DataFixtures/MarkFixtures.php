@@ -26,8 +26,8 @@ class MarkFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager)
     {
     	$faker = Factory::create();
-		$lessons = $this->lessonRepository->findAll();
-		$students = $this->studentRepository->findAll();
+		$lessons = $this->lessonRepository->findLast(5);
+		$students = $this->studentRepository->findLast(100);
 
 		foreach ($lessons as $lesson){
 			foreach ($students as $student){

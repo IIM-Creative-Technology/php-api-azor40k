@@ -18,33 +18,18 @@ class LessonRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Lesson::class);
     }
-
-    // /**
-    //  * @return Lesson[] Returns an array of Lesson objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('l')
-            ->andWhere('l.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('l.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Lesson
-    {
-        return $this->createQueryBuilder('l')
-            ->andWhere('l.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
+	
+	/**
+	 * @param int $max
+	 * @return int|mixed|string
+	 */
+	public function findLast(int $max)
+	{
+		return $this->createQueryBuilder('l')
+		            ->orderBy("l.id", "DESC")
+		            ->setMaxResults($max)
+		            ->getQuery()
+		            ->getResult()
+			;
+	}
 }

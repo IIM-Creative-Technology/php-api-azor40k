@@ -27,11 +27,10 @@ class LessonFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager)
     {
     	$faker = Factory::create();
-		$grades = $this->gradeRepository->findAll();
-		$professors = $this->professorRepository->findAll();
+		$grades = $this->gradeRepository->findLast(5);
+		$professors = $this->professorRepository->findLast(5);
 
-		for ($i = 0; $i < 4; $i++) {
-
+		for ($i = 0; $i < 5; $i++) {
 			$randomDate = rand( strtotime("01/01/2021"), time() );
 			$randomDays = rand(1,5);
 

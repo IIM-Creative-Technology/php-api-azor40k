@@ -21,9 +21,9 @@ class StudentFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager)
     {
     	$faker = Factory::create();
-    	$grades = $this->gradeRepository->findAll();
+    	$grades = $this->gradeRepository->findLast(5);
 
-		for ($i = 0; $i < 99; $i++) {
+		for ($i = 0; $i < 100; $i++) {
 			$student = new Student();
 			$student->createStudent(
 				$faker->lastName,

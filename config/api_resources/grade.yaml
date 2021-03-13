@@ -1,0 +1,20 @@
+App\Entity\Grade:
+  normalizationContext:
+    groups: ~
+  denormalizationContext:
+    groups: ~
+  collectionOperations:
+    get: ~
+    post: ~
+  itemOperations:
+    get: ~
+    put: ~
+    delete: ~
+    patch: ~
+    grade_students:
+      method: 'GET'
+      path: "/grades/{id}/students"
+      controller: App\Api\GradeStudents
+      openapi_context:
+        summary: "Retrieves Students from a Grade resource."
+        description: "Retrieves Students from a Grade resource."
