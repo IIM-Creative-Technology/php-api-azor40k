@@ -7,6 +7,7 @@ use App\Repository\MarkRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
+use App\Validator as Validator;
 
 /**
  * @ApiResource()
@@ -16,6 +17,9 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     errorPath="student",
  *     message="This student has already a mark on this lesson."
  * )
+ *
+ * Test Validator
+ * Validator\IsStudentEnrolled()
  */
 class Mark
 {
@@ -38,15 +42,18 @@ class Mark
 
     /**
      * @ORM\ManyToOne(targetEntity=Student::class, inversedBy="marks")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $student;
 
     /**
      * @ORM\ManyToOne(targetEntity=Lesson::class, inversedBy="marks")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $lesson;
-
-    public function getId(): ?int
+    
+	
+	public function getId(): ?int
     {
         return $this->id;
     }
