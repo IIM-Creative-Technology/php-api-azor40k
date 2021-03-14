@@ -1,4 +1,3 @@
-[![Contributors][contributors-shield]][contributors-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <br />
@@ -137,7 +136,5 @@ Project Link: [https://github.com/IIM-Creative-Technology/php-api-azor40k](https
 * [Pierre Grimaud](https://github.com/pgrimaud)
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/IIM-Creative-Technology/php-api-azor40k/graphs/contributors
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/axelcarandang/
